@@ -1,0 +1,16 @@
+# Application name to uniquely identify our service at the registry
+spring:
+  application:
+    name: spring-cloud-eureka-client
+
+# Setting a custom port for this service, may allow Spring Boot to choose a random port for us
+server:
+  port: 80
+
+# Providing information to the client about where to locate the registry
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
