@@ -4,8 +4,8 @@ spring:
     name: spring-cloud-eureka-client
 
 # Setting a custom port for this service, may allow Spring Boot to choose a random port for us
-server:
-  port: 80
+# server:
+#   port: 80
 
 # Providing information to the client about where to locate the registry
 eureka:
@@ -14,7 +14,3 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     preferIpAddress: true
-    # Overriding default to secure http endpoints
-    status-page-url-path: https://${eureka.instance.hostName}/info
-    health-check-url: https://${eureka.instance.hostName}/health
-    home-page-url: https://${eureka.instance.hostName}/
